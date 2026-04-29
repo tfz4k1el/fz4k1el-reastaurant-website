@@ -108,13 +108,10 @@ export default function App() {
       {/* Hero Section */}
       <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center pt-20">
         {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80" 
-            alt="Delicious South Indian Food Spread" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80')` }}
+        >
           {/* Overlay with brand colors */}
           <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/80 via-brand-navy/60 to-brand-red/70 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-black/30"></div>
@@ -123,7 +120,7 @@ export default function App() {
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.h1 
-            className="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-xl"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -131,7 +128,7 @@ export default function App() {
             Authentic South Indian Cuisine in the UAE
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-2xl text-white/90 mb-10 font-light max-w-2xl mx-auto drop-shadow-md"
+            className="text-base sm:text-lg md:text-2xl text-white/90 mb-10 font-light max-w-2xl mx-auto drop-shadow-md"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -139,20 +136,20 @@ export default function App() {
             Celebrating tradition, flavor, and hospitality at every visit.
           </motion.p>
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <a 
               href="#menu" 
-              className="bg-brand-gold hover:bg-brand-gold-light text-brand-navy font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+              className="w-full sm:w-auto bg-brand-gold hover:bg-brand-gold-light text-brand-navy font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
             >
               View Our Menu
             </a>
             <a 
               href="#locations" 
-              className="bg-brand-red hover:bg-brand-red-dark text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-brand-red text-center"
+              className="w-full sm:w-auto bg-brand-red hover:bg-brand-red-dark text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-brand-red text-center"
             >
               Find a Branch
             </a>
@@ -161,9 +158,9 @@ export default function App() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-white">
+      <section id="about" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -181,7 +178,7 @@ export default function App() {
                 />
                 <div className="absolute inset-0 border-4 border-white/20 rounded-3xl m-4 pointer-events-none"></div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-brand-gold rounded-full -z-10 blur-3xl opacity-30"></div>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-32 h-32 md:w-40 md:h-40 bg-brand-gold rounded-full -z-10 blur-3xl opacity-30"></div>
             </motion.div>
 
             {/* Text Content */}
@@ -192,16 +189,16 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2">Our Story</h2>
-              <h3 className="font-serif text-4xl md:text-5xl text-brand-navy font-bold mb-6 leading-tight">
-                Welcome to <br />
+              <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy font-bold mb-6 leading-tight">
+                Welcome to <br className="hidden sm:block" />
                 <span className="text-brand-red">Jaya's Kitchen</span>
               </h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-10">
                 Jaya's Group is a proudly established name in the UAE's dining landscape. With a strong foundation built on quality and consistency, we have grown into a trusted destination for customers seeking genuine taste. We take pride in blending authentic culinary traditions with modern service standards to bring you the warmth of South Indian hospitality.
               </p>
 
               {/* Badges */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 {[
                   { icon: Utensils, label: "Dine-in" },
                   { icon: Truck, label: "Home Delivery" },
@@ -222,11 +219,11 @@ export default function App() {
       </section>
 
       {/* Signature Dishes Section */}
-      <section id="menu" className="py-24 bg-gray-50">
+      <section id="menu" className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-brand-red font-bold tracking-wider uppercase text-sm mb-2">Menu Highlights</h2>
-            <h3 className="font-serif text-4xl md:text-5xl text-brand-navy font-bold mb-4">
+            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy font-bold mb-4">
               Explore Our Culinary Delights
             </h3>
             <div className="w-24 h-1 bg-brand-gold mx-auto"></div>
@@ -292,17 +289,46 @@ export default function App() {
         </div>
       </section>
 
+      {/* Parallax Divider Section */}
+      <section 
+        className="relative py-32 md:py-48 bg-fixed bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?auto=format&fit=crop&w=1920&q=80')` }}
+      >
+        <div className="absolute inset-0 bg-brand-navy/80 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <motion.h2 
+            className="font-serif text-3xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight drop-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            "A symphony of spices in every bite."
+          </motion.h2>
+          <motion.p 
+            className="text-brand-gold text-sm sm:text-base md:text-lg font-bold tracking-[0.2em] uppercase drop-shadow-md"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Taste the Authentic Indian Heritage
+          </motion.p>
+        </div>
+      </section>
+
       {/* Contact & Locations Section */}
-      <section id="locations" className="py-24 bg-white relative overflow-hidden">
+      <section id="locations" className="py-16 md:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-navy/5 -z-10 skew-x-12 transform origin-top-right"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="text-brand-red font-bold tracking-wider uppercase text-sm mb-2">Find Us</h2>
-            <h3 className="font-serif text-4xl md:text-5xl text-brand-navy font-bold mb-4">
+            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy font-bold mb-4">
               Visit Jaya's Kitchen
             </h3>
-            <p className="text-gray-500 text-lg">We have 5 convenient locations across Dubai and Sharjah.</p>
+            <p className="text-gray-500 text-base sm:text-lg">We have 5 convenient locations across Dubai and Sharjah.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -374,9 +400,9 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-navy text-white pt-16 pb-8">
+      <footer className="bg-brand-navy text-white pt-12 md:pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left mb-12 border-b border-white/10 pb-12">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-12 items-center text-center md:text-left mb-10 md:mb-12 border-b border-white/10 pb-10 md:pb-12">
             {/* Logo */}
             <div className="flex flex-col items-center md:items-start opacity-90">
               <div className="w-16 h-16 rounded-full bg-brand-red flex items-center justify-center font-serif font-bold text-3xl mb-4 text-white">
