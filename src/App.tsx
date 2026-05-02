@@ -50,7 +50,7 @@ export default function App() {
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group">
               <img 
-                src="/logo.png" 
+                src={isScrolled ? "/logo.png" : "/logo_white.png"} 
                 alt="Jaya's Kitchen Logo" 
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
                 onError={(e) => {
@@ -423,9 +423,9 @@ export default function App() {
             {/* Logo */}
             <div className="flex flex-col items-center md:items-start">
               <img 
-                src="/logo.png" 
+                src="/logo_white.png" 
                 alt="Jaya's Kitchen Logo" 
-                className="h-16 w-auto object-contain mb-6 bg-white/10 p-2 rounded-lg"
+                className="h-16 w-auto object-contain mb-6"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
