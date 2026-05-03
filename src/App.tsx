@@ -13,8 +13,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
-import logoImage from './logo.png';
-import logoWhiteImage from './logo_white.png';
+import { logoBase64, logoWhiteBase64 } from './logos';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,26 +51,10 @@ export default function App() {
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group">
               <img 
-                src={isScrolled ? logoImage : logoWhiteImage} 
+                src={isScrolled ? logoBase64 : logoWhiteBase64} 
                 alt="Jaya's Kitchen Logo" 
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
-                onError={(e) => {
-                  // Fallback if logo.png is not uploaded yet
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
               />
-              {/* Fallback logo just in case logo.png isn't available */}
-              <div className="hidden items-center gap-3" style={{ display: 'none' }}>
-                <div className="w-10 h-10 rounded-sm bg-brand-red flex items-center justify-center text-white font-serif font-bold text-xl transition-transform border border-brand-gold/30">
-                  JK
-                </div>
-                <span className={`font-serif text-2xl font-bold tracking-wide ${isScrolled ? 'text-brand-navy' : 'text-white drop-shadow-md'}`}>
-                  Jaya's Kitchen
-                </span>
-              </div>
             </a>
 
             {/* Desktop Nav */}
@@ -425,23 +408,10 @@ export default function App() {
             {/* Logo */}
             <div className="flex flex-col items-center md:items-start">
               <img 
-                src={logoWhiteImage} 
+                src={logoWhiteBase64} 
                 alt="Jaya's Kitchen Logo" 
                 className="h-16 w-auto object-contain mb-6"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
               />
-              {/* Fallback logo */}
-              <div className="hidden flex-col items-center md:items-start w-full" style={{ display: 'none' }}>
-                <div className="w-12 h-12 border border-brand-gold/30 rounded-sm flex items-center justify-center font-serif font-bold text-2xl mb-6 text-brand-gold">
-                  JK
-                </div>
-                <h2 className="font-serif text-3xl mb-4">Jaya's Kitchen</h2>
-              </div>
               <p className="text-gray-400 font-light text-sm max-w-xs leading-relaxed mt-2">
                 Blending authentic South Indian culinary traditions with modern service standards in the UAE.
               </p>
