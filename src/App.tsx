@@ -29,6 +29,10 @@ export default function App() {
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
@@ -37,7 +41,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen font-sans text-gray-800 selection:bg-brand-gold selection:text-white overflow-x-hidden">
+    <div className="min-h-screen font-sans text-gray-800 selection:bg-brand-gold selection:text-white">
       {/* Navigation */}
       <header 
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
@@ -63,6 +67,7 @@ export default function App() {
                 <a 
                   key={link.name} 
                   href={link.href}
+                  onClick={handleNavClick}
                   className={`font-medium tracking-wide text-sm outline-none transition-colors hover:text-brand-gold focus:text-brand-gold ${
                     isScrolled ? 'text-brand-navy' : 'text-white drop-shadow-sm'
                   }`}
@@ -95,7 +100,7 @@ export default function App() {
               <a 
                 key={link.name} 
                 href={link.href}
-                onClick={toggleMenu}
+                onClick={handleNavClick}
                 className="block text-brand-navy font-medium text-lg border-b border-gray-100 pb-2"
               >
                 {link.name}
@@ -233,47 +238,72 @@ export default function App() {
             {[
               {
                 title: "Porunna Kozhi",
-                image: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1599487405270-86430afbedf8?auto=format&fit=crop&w=600&q=80",
                 desc: "Traditional pan-fried chicken marinated in a blend of hand-ground Malabar spices."
               },
               {
                 title: "Elaneer Chicken",
-                image: "https://images.unsplash.com/photo-1567188040759-fbba1883dbde?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80",
                 desc: "Tender chicken morsels slow-cooked in a silky, aromatic tender coconut water gravy."
               },
               {
                 title: "Kayal Kizhi",
-                image: "https://images.unsplash.com/photo-1626777552726-4a6b52c67ad5?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80",
                 desc: "Fresh seafood seasoned with ginger and chilies, steamed to perfection in a banana leaf pouch."
               },
               {
+                title: "Kalyana Virunnu",
+                image: "https://images.unsplash.com/photo-1589301760014-d929f39ce9b1?auto=format&fit=crop&w=600&q=80",
+                desc: "The ultimate festive feast—a grand celebration of flavors from traditional South Indian weddings."
+              },
+              {
                 title: "Wayanadan Variyellu Roast",
-                image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=80",
                 desc: "Spicy and succulent beef ribs roasted with black pepper and coconut slices from Wayanad."
+              },
+              {
+                title: "Silsila Chicken",
+                image: "https://images.unsplash.com/photo-1627042633145-b780d842bac3?auto=format&fit=crop&w=600&q=80",
+                desc: "A fragrant, slow-cooked chicken dish with rich buttery and mildly spiced aromatic notes."
+              },
+              {
+                title: "Mohabat Chicken",
+                image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80",
+                desc: "Chicken cooked with a special 'love' blend of cardamom, saffron, and cream."
+              },
+              {
+                title: "Grilled Chicken",
+                image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=600&q=80",
+                desc: "Classic marinated chicken grilled with a smoky char and served with garlic dip."
+              },
+              {
+                title: "Keerikkadan Chicken",
+                image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80",
+                desc: "A fiery and robust chicken preparation famous for its intense heat and spices."
               },
               {
                 title: "Pambaram Kozhi",
                 image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80",
-                desc: "Our famous 'spinning' roast chicken, crispy on the outside and incredibly juicy within."
+                desc: "Our famous 'spinning' roast rotisserie chicken, crispy on the outside and incredibly juicy within."
+              },
+              {
+                title: "Pothin Kaalu",
+                image: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=600&q=80",
+                desc: "Traditional style tender beef bone/trotters slow-cooked into a savory, rich gravy."
               },
               {
                 title: "Charcoal Pollichathu",
-                image: "https://images.unsplash.com/photo-1621460248083-659174092b1f?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80",
                 desc: "Signature fish or meat delicacy marinated in hot masala and roasted over open charcoal."
               },
               {
                 title: "Rowdy Beef",
-                image: "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
                 desc: "A bold, aggressively spiced beef stir-fry with crispy fried coconut and curry leaves."
               },
               {
-                title: "Kalyana Virunnu",
-                image: "https://images.unsplash.com/photo-1596797038558-bc43d373fefc?auto=format&fit=crop&w=600&q=80",
-                desc: "The ultimate festive feast—a grand celebration of flavors from traditional South Indian weddings."
-              },
-              {
                 title: "Attin Thala Curry",
-                image: "https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80",
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=600&q=80",
                 desc: "A rich, slow-simmered goat specialty cooked with cracked black pepper and roasted spices."
               }
             ].map((category, index) => (
