@@ -37,7 +37,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen font-sans text-gray-800 selection:bg-brand-gold selection:text-white">
+    <div className="min-h-screen font-sans text-gray-800 selection:bg-brand-gold selection:text-white overflow-x-hidden">
       {/* Navigation */}
       <header 
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
@@ -106,10 +106,10 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center pt-20">
+      <section id="home" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center pt-20">
         {/* Background */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80')` }}
         >
           {/* Overlay with brand colors */}
@@ -232,29 +232,49 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "South Indian Specials",
-                image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=600&q=80",
-                desc: "Crispy dosas, fluffy idlis, and traditional thalis."
+                title: "Porunna Kozhi",
+                image: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80",
+                desc: "Traditional pan-fried chicken marinated in a blend of hand-ground Malabar spices."
               },
               {
-                title: "North Indian Classics",
-                image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80",
-                desc: "Rich gravies, aromatic biryanis, and fresh butter naan."
+                title: "Elaneer Chicken",
+                image: "https://images.unsplash.com/photo-1567188040759-fbba1883dbde?auto=format&fit=crop&w=600&q=80",
+                desc: "Tender chicken morsels slow-cooked in a silky, aromatic tender coconut water gravy."
               },
               {
-                title: "Charcoal & Tandoor",
-                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80",
-                desc: "Sizzling kebabs and tikka straight from the clay oven."
+                title: "Kayal Kizhi",
+                image: "https://images.unsplash.com/photo-1626777552726-4a6b52c67ad5?auto=format&fit=crop&w=600&q=80",
+                desc: "Fresh seafood seasoned with ginger and chilies, steamed to perfection in a banana leaf pouch."
               },
               {
-                title: "Authentic Chinese",
-                image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80",
-                desc: "Indo-Chinese favorites tossed in fiery woks."
+                title: "Wayanadan Variyellu Roast",
+                image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80",
+                desc: "Spicy and succulent beef ribs roasted with black pepper and coconut slices from Wayanad."
               },
               {
-                title: "Fresh Juices & Snacks",
-                image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=600&q=80",
-                desc: "Refreshing mocktails, faloodas, and spicy chaat."
+                title: "Pambaram Kozhi",
+                image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80",
+                desc: "Our famous 'spinning' roast chicken, crispy on the outside and incredibly juicy within."
+              },
+              {
+                title: "Charcoal Pollichathu",
+                image: "https://images.unsplash.com/photo-1621460248083-659174092b1f?auto=format&fit=crop&w=600&q=80",
+                desc: "Signature fish or meat delicacy marinated in hot masala and roasted over open charcoal."
+              },
+              {
+                title: "Rowdy Beef",
+                image: "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&fit=crop&w=600&q=80",
+                desc: "A bold, aggressively spiced beef stir-fry with crispy fried coconut and curry leaves."
+              },
+              {
+                title: "Kalyana Virunnu",
+                image: "https://images.unsplash.com/photo-1596797038558-bc43d373fefc?auto=format&fit=crop&w=600&q=80",
+                desc: "The ultimate festive feast—a grand celebration of flavors from traditional South Indian weddings."
+              },
+              {
+                title: "Attin Thala Curry",
+                image: "https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80",
+                desc: "A rich, slow-simmered goat specialty cooked with cracked black pepper and roasted spices."
               }
             ].map((category, index) => (
               <motion.div 
@@ -291,7 +311,7 @@ export default function App() {
 
       {/* Parallax Divider Section */}
       <section 
-        className="relative py-32 md:py-48 bg-fixed bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        className="relative py-32 md:py-48 bg-scroll md:bg-fixed bg-cover bg-center bg-no-repeat flex items-center justify-center"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?auto=format&fit=crop&w=1920&q=80')` }}
       >
         <div className="absolute inset-0 bg-brand-navy/80 mix-blend-multiply"></div>
@@ -337,31 +357,36 @@ export default function App() {
                 name: "Al Karama",
                 city: "Dubai",
                 address: "Behind Al Karama Post Office",
-                phone: "04 288 7566 / 054 298 8777"
+                phone: "04 288 7566 / 054 298 8777",
+                map: "https://www.google.com/maps/search/?api=1&query=Jaya%27s+Kitchen+Al+Karama+Dubai"
               },
               {
                 name: "Abu Shagara",
                 city: "Sharjah",
                 address: "Aws Bin Thabet Street",
-                phone: "06 546 5318 / 054 277 9779"
+                phone: "06 546 5318 / 054 277 9779",
+                map: "https://www.google.com/maps/search/?api=1&query=Jaya%27s+Kitchen+Abu+Shagara+Sharjah"
               },
               {
                 name: "Rolla",
                 city: "Sharjah",
                 address: "Opposite Rolla Park",
-                phone: "054 277 9779"
+                phone: "054 277 9779",
+                map: "https://www.google.com/maps/search/?api=1&query=Jaya%27s+Kitchen+Rolla+Sharjah"
               },
               {
                 name: "Sharaf DG",
                 city: "Bur Dubai",
                 address: "Near Sharaf DG Metro Station",
-                phone: "04 591 9291 / 050 776 4991"
+                phone: "04 591 9291 / 050 776 4991",
+                map: "https://www.google.com/maps/search/?api=1&query=Jaya%27s+Kitchen+Sharaf+DG+Bur+Dubai"
               },
               {
                 name: "Bu Tina",
                 city: "Sharjah",
                 address: "40th St, Opp. Zulekha Hospital",
-                phone: "06 559 8336"
+                phone: "06 559 8336",
+                map: "https://www.google.com/maps/search/?api=1&query=Jaya%27s+Kitchen+Bu+Tina+Sharjah"
               }
             ].map((location, index) => (
               <motion.div 
@@ -392,9 +417,14 @@ export default function App() {
                   </div>
                 </div>
                 
-                <button className="mt-10 tracking-widest uppercase text-xs text-brand-navy font-bold hover:text-brand-gold transition-colors duration-300 flex items-center gap-3">
+                <a 
+                  href={location.map} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-10 tracking-widest uppercase text-xs text-brand-navy font-bold hover:text-brand-gold transition-colors duration-300 flex items-center gap-3"
+                >
                   Get Directions <span className="text-lg leading-none">&rarr;</span>
-                </button>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -431,13 +461,13 @@ export default function App() {
               <h4 className="font-sans font-bold tracking-[0.2em] uppercase text-white text-xs mb-8">Connect</h4>
               <p className="mb-6 max-w-xs">Join our community online for latest updates and offers.</p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
+                <a href="https://facebook.com/jayaskitchenuae" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
                   <Facebook size={18} strokeWidth={1} />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
+                <a href="https://instagram.com/jayaskitchenuae" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
                   <Instagram size={18} strokeWidth={1} />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
+                <a href="https://twitter.com/jayaskitchenuae" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors">
                   <Twitter size={18} strokeWidth={1} />
                 </a>
               </div>
