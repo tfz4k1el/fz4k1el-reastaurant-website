@@ -22,7 +22,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Authentic South Indian, smoky North Indian grills & bold Indo-Chinese flavours
+            Authentic South Indian flavours, smoky North Indian grills & bold Indo-Chinese cuisines
           </motion.h1>
           <motion.p 
             className="text-base sm:text-lg md:text-2xl text-white/90 mb-10 font-light max-w-2xl mx-auto drop-shadow-md"
@@ -42,13 +42,7 @@ export default function Home() {
               to="/menu"
               className="w-full sm:w-auto bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-4 px-8 transition-all hover:bg-white text-center"
             >
-              View Our Menu
-            </Link>
-            <Link 
-              to="/locations"
-              className="w-full sm:w-auto bg-transparent border-2 border-white text-white uppercase tracking-widest text-xs font-bold py-4 px-8 transition-all hover:bg-white hover:text-brand-navy text-center"
-            >
-              Find a Branch
+              View Menu
             </Link>
             <a 
               href="https://wa.me/971542779779" // Assuming standard WhatsApp number
@@ -66,13 +60,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
           <h2 className="text-brand-gold font-sans font-bold tracking-[0.2em] uppercase text-xs mb-4">Our Story</h2>
           <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy mb-8">
-            Proudly established in the UAE. Rooted in Indian Tradition.
+            Soulful, high-quality Indian food served with passion and warmth.
           </h3>
           <p className="text-gray-500 font-light text-base sm:text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
-            Jaya's Kitchen is part of Jaya's Group, a homegrown Indian restaurant brand built on authentic cooking, consistent quality, and warm hospitality. What started as a passion for real Indian flavours has grown into five branches across Sharjah and Dubai.
+            Jaya’s Kitchen brings authentic taste, warm hospitality, and familiar flavours to every dining experience.
           </p>
           <Link to="/about" className="inline-block bg-brand-navy text-white uppercase tracking-widest text-xs font-bold py-4 px-10 transition-all hover:bg-brand-red">
-            Learn More About Jaya's Kitchen
+            Know More
           </Link>
         </div>
       </section>
@@ -88,7 +82,7 @@ export default function Home() {
             Whether you are in the mood for a Kerala-style meal, a North Indian curry, a smoky charcoal grill, a tandoor favourite, a quick snack, or a fresh juice, the menu at Jaya's Kitchen is built for every appetite.
           </p>
           <Link to="/menu" className="inline-block bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-4 px-10 transition-all hover:bg-brand-navy hover:text-white">
-            View Our Menu
+            View Menu
           </Link>
         </div>
       </section>
@@ -101,15 +95,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-brand-navy/90 md:bg-brand-navy/80 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h2 className="text-brand-gold font-bold tracking-[0.2em] uppercase text-xs mb-4">Dishes You Won’t Find Everywhere</h2>
+          <h2 className="text-brand-gold font-bold tracking-[0.2em] uppercase text-xs mb-4">Unique Signature Dishes</h2>
           <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 leading-tight drop-shadow-lg">
-            Jaya's Kitchen Specials - Made for True Indian Food Lovers
+            Jaya's Kitchen Specials - Authentic & Rare
           </h3>
           <p className="text-gray-300 font-light text-base sm:text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
-            Some dishes do more than fill a plate. They create memory. Jaya's Kitchen Specials bring together regional Kerala flavours, slow cooking, bold spices, and rare menu favourites that make the brand stand apart from regular Indian restaurants in Sharjah and Dubai.
+            Experience rare Kerala flavors and slow-cooked regional spices. Our signature specials set us apart from standard Indian dining in Sharjah and Dubai.
           </p>
           <Link to="/menu" className="inline-block bg-white text-brand-navy border-2 border-white uppercase tracking-widest text-xs font-bold py-4 px-10 transition-all hover:bg-transparent hover:text-white">
-            See the Full Jaya’s Special Menu
+            Signature Dishes Menu
           </Link>
         </div>
       </section>
