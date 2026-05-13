@@ -48,46 +48,46 @@ export default function Menu() {
 
   return (
     <>
-      <section className="pt-40 pb-20 bg-brand-navy text-white text-center px-4">
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Explore the Jaya's Kitchen Menu</h1>
+      <section className="pt-40 pb-20 bg-brand-navy dark:bg-black text-white text-center px-4">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Explore the Jaya's Kitchen specials</h1>
         <h2 className="text-lg sm:text-xl font-light text-brand-gold max-w-3xl mx-auto italic mb-8">From Soulful South Indian favourites to rich North Indian classics and bold Indo-Chinese flavours</h2>
         <p className="text-gray-300 font-light max-w-4xl mx-auto">
           The Jaya's Kitchen menu is designed for every kind of Indian food craving. From quick breakfasts and weekday lunches to family dinners, group meals, and rare regional specials, each category helps customers find exactly what they want faster.
         </p>
       </section>
 
-      <section className="py-24 bg-gray-50/50">
+      <section className="py-24 bg-gray-50/50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-brand-gold font-sans font-bold tracking-[0.2em] uppercase text-xs mb-4">Menu Highlights</h2>
-            <div className="w-12 h-px bg-brand-navy/30 mx-auto"></div>
+            <h2 className="text-brand-gold font-poppins font-semibold tracking-[0.3em] uppercase text-xs mb-4">Menu Highlights</h2>
+            <div className="w-12 h-px bg-brand-navy/30 dark:bg-brand-gold/40 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {categories.map((category, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 flex flex-col md:flex-row relative"
+                className="group bg-white dark:bg-neutral-900 dark:border dark:border-white/10 overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-brand-gold/10 transition-all duration-700 flex flex-col md:flex-row relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
                 <div className="relative md:w-1/2 h-64 md:h-auto overflow-hidden">
-                  <img 
-                    src={category.image} 
-                    alt={category.title} 
+                  <img
+                    src={category.image}
+                    alt={category.title}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-brand-navy/20"></div>
+                  <div className="absolute inset-0 bg-brand-navy/20 dark:bg-black/40"></div>
                 </div>
-                <div className="p-8 md:w-1/2 flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-100">
-                  <h3 className="font-serif text-2xl text-brand-navy mb-4">
+                <div className="p-8 md:w-1/2 flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/10">
+                  <h3 className="font-serif text-2xl text-brand-navy dark:text-white mb-4">
                     {category.title}
                   </h3>
-                  <p className="text-gray-500 font-light text-sm leading-relaxed mb-6">{category.desc}</p>
-                  <Link to="/locations" className="inline-flex items-center gap-3 text-xs tracking-widest uppercase text-brand-navy font-bold group-hover:text-brand-gold transition-colors mt-auto">
+                  <p className="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed mb-6">{category.desc}</p>
+                  <Link to="/locations" className="inline-flex items-center gap-3 text-xs tracking-widest uppercase text-brand-navy dark:text-brand-gold font-bold group-hover:text-brand-gold dark:group-hover:text-white transition-colors mt-auto">
                     Find Nearest Branch <span className="text-lg leading-none">&rarr;</span>
                   </Link>
                 </div>

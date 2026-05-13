@@ -56,27 +56,27 @@ export default function Services() {
 
   return (
     <>
-      <section className="pt-40 pb-20 bg-brand-navy text-white text-center px-4">
+      <section className="pt-40 pb-20 bg-brand-navy dark:bg-black text-white text-center px-4">
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Dine In, Celebrate, Order or Cater with Jaya’s Kitchen</h1>
         <p className="text-lg sm:text-xl font-light text-gray-300 max-w-3xl mx-auto">
           Jaya's Kitchen supports more than regular restaurant dining. Whether customers want a quick takeaway, a family buffet, a party hall, live music, home delivery, outdoor catering, or a special party order, we have you covered.
         </p>
       </section>
 
-      <section className="py-20 bg-gray-50 text-center px-4">
+      <section className="py-20 bg-gray-50 dark:bg-neutral-950 text-center px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((s, i) => (
-            <div key={i} className="bg-white p-10 shadow-sm border border-gray-100 flex flex-col justify-between items-center h-full">
+            <div key={i} className="bg-white dark:bg-neutral-900 p-10 shadow-sm border border-gray-100 dark:border-white/10 flex flex-col justify-between items-center h-full">
               <div>
-                <h3 className="font-serif text-2xl text-brand-navy mb-4">{s.title}</h3>
-                <p className="text-gray-500 font-light mb-8">{s.desc}</p>
+                <h3 className="font-serif text-2xl text-brand-navy dark:text-white mb-4">{s.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 font-light mb-8">{s.desc}</p>
               </div>
               {s.isAnchor ? (
-                <a href={s.btnLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-3 px-6 transition-all hover:bg-brand-navy hover:text-white mt-auto">
+                <a href={s.btnLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-3 px-6 transition-all hover:bg-brand-navy hover:text-white dark:hover:bg-white dark:hover:text-black mt-auto">
                   {s.btnText}
                 </a>
               ) : (
-                <Link to={s.btnLink} className="w-full sm:w-auto bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-3 px-6 transition-all hover:bg-brand-navy hover:text-white mt-auto">
+                <Link to={s.btnLink} className="w-full sm:w-auto bg-brand-gold text-brand-navy uppercase tracking-widest text-xs font-bold py-3 px-6 transition-all hover:bg-brand-navy hover:text-white dark:hover:bg-white dark:hover:text-black mt-auto">
                   {s.btnText}
                 </Link>
               )}
