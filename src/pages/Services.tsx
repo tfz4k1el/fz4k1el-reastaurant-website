@@ -13,7 +13,7 @@ export default function Services() {
     {
       title: "Live Music Evenings",
       desc: "A strong experience-led differentiator for guests who want food, atmosphere, and entertainment together.",
-      btnText: "Reserve for Live Music / Enquire on WhatsApp",
+      btnText: "Reserve/Enquire on WhatsApp",
       btnLink: "https://wa.me/971542779779",
       isAnchor: true
     },
